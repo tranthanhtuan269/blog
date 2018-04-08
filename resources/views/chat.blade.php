@@ -14,7 +14,7 @@
 <body>
 	<div class="container">
 		<div class="row" id="app">
-			<div class="offset-4 col-4">
+			<div class="offset-1 col-10">
 				<li class="list-group-item active">Chat room <span>@{{ numberOfUsers }}</span></li>
 				<ul class="list-group chat-hold" v-chat-scroll>
 					<message
@@ -25,7 +25,7 @@
 					:user=chat.user[index]>
 						@{{ value }}
 					</message>
-					<li class="list-group-item">@{{ typing }}</li>
+					<li class="list-group-item" v-if="typing.length > 0">@{{ typing }}</li>
 				</ul>
 				<input type="text" class="form-control" placeholder="Type your message here..." v-model="message" @keyup.enter="send">
 			</div>
